@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اطلب الآن | بير برنت</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+  <script src="script.js"></script>
+</body>
+<div id="accessibility-menu">
+        <button id="accessibility-btn">Accessibility</button>
+        <div id="accessibility-options">
+            <button id="increase-text">A+</button>
+            <button id="decrease-text">A-</button>
+            <button id="reset-text">Reset</button>
+        </div>
+    </div>
+
+    <script>
+        let currentFontSize = 16; 
+
+        document.getElementById("increase-text").addEventListener("click", () => {
+            currentFontSize += 2;
+            document.body.style.fontSize = currentFontSize + "px";
+        });
+
+        document.getElementById("decrease-text").addEventListener("click", () => {
+            if (currentFontSize > 10) {
+                currentFontSize -= 2;
+                document.body.style.fontSize = currentFontSize + "px";
+            }
+        });
+
+        document.getElementById("reset-text").addEventListener("click", () => {
+            currentFontSize = 16;
+            document.body.style.fontSize = currentFontSize + "px";
+        });
+    </script>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>بير برنت</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="products.html">المنتجات</a></li>
+                    <li><a href="packages.html">الحزم</a></li>
+                    <li><a href="order.html">اطلب الآن</a></li>
+                    <li><a href="contact.html">تواصل معنا</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="order-form">
+        <div class="container">
+            <h2>نموذج الطلب</h2>
+            <form action="#" method="post">
+                <label for="name">الاسم الكامل:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">البريد الإلكتروني:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="product">نوع المنتج / الحزمة:</label>
+                <select id="product" name="product" required>
+          <option value="">-- اختر --</option>
+          <option value="mug">كوب مطبوع</option>
+          <option value="tshirt">قميص مطبوع</option>
+          <option value="card">كارت تهنئة</option>
+          <option value="restaurant">حزمة المطاعم</option>
+          <option value="school">حزمة المدارس</option>
+          <option value="company">حزمة الشركات</option>
+        </select>
+
+                <label for="details">ملاحظات إضافية:</label>
+                <textarea id="details" name="details" rows="4"></textarea>
+
+                <button type="submit" class="btn">إرسال الطلب</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 بير برنت. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <html lang="ar">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>الاستدامة وإعادة التدوير</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <header>
+            <h1>الاستدامة وإعادة التدوير</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">عن الاستدامة</a></li>
+                    <li><a href="#recycling">إعادة التدوير</a></li>
+                    <li><a href="#participation">كيفية المشاركة</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="about">
+            <h2>مقدمة عن الاستدامة</h2>
+            <p>الاستدامة تعني استخدام الموارد بطريقة تضمن بقائها للأجيال القادمة...</p>
+        </section>
+
+        <section id="recycling">
+            <h2>أهمية إعادة التدوير</h2>
+            <p>إعادة التدوير تساعد في تقليل التلوث والحفاظ على الموارد الطبيعية...</p>
+        </section>
+
+        <section id="participation">
+            <h2>كيفية المشاركة في إعادة التدوير</h2>
+            <button onclick="showTip()">نصيحة بيئية</button>
+            <p id="tip"></p>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 جميع الحقوق محفوظة</p>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+
+    </html>
+</body>
+
+</html>

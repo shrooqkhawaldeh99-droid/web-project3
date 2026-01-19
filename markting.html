@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خدمات التسويق</title>
+    <style>
+  <script src="script.js"></script>
+</body>
+<div id="accessibility-menu">
+        <button id="accessibility-btn">Accessibility</button>
+        <div id="accessibility-options">
+            <button id="increase-text">A+</button>
+            <button id="decrease-text">A-</button>
+            <button id="reset-text">Reset</button>
+        </div>
+    </div>
+
+    <script>
+        let currentFontSize = 16; 
+
+        document.getElementById("increase-text").addEventListener("click", () => {
+            currentFontSize += 2;
+            document.body.style.fontSize = currentFontSize + "px";
+        });
+
+        document.getElementById("decrease-text").addEventListener("click", () => {
+            if (currentFontSize > 10) {
+                currentFontSize -= 2;
+                document.body.style.fontSize = currentFontSize + "px";
+            }
+        });
+
+        document.getElementById("reset-text").addEventListener("click", () => {
+            currentFontSize = 16;
+            document.body.style.fontSize = currentFontSize + "px";
+        });
+    </script>
+        body {
+            font-family: 'Tahoma', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+        }
+        
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        section {
+            padding: 30px;
+        }
+        
+        .مميزات {
+            background-color: #e0f7fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .زر-تواصل {
+            background-color: #28a745;
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            border-radius: 8px;
+            display: inline-block;
+            font-size: 18px;
+        }
+        
+        .زر-تواصل:hover {
+            background-color: #218838;
+        }
+        
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin-top: 30px;
+        }
+        
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+        
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        footer {
+            background-color: #ddd;
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>خدمات التسويق الذكي</h1>
+        <p>نساعدك توصل لعملائك بالطريقة الصح!</p>
+    </header>
+
+    <section>
+        <h2>ليش تختارنا؟</h2>
+        <div class="مميزات">
+            <ul>
+                <li>استراتيجيات تسويق رقمي مخصصة لك</li>
+                <li>إعلانات فعّالة على السوشيال ميديا</li>
+                <li>تحليل بيانات وتحسين الأداء</li>
+                <li>تصميمات إبداعية وحملات جذابة</li>
+            </ul>
+        </div>
+
+        <h2>راسلنا مباشرة</h2>
+        <form action="#" method="post">
+            <label for="name">الاسم الكامل:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">البريد الإلكتروني:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">رسالتك:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">إرسال</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 جميع الحقوق محفوظة - فريق التسويق</p>
+    </footer>
+
+</body>
+
+</html>

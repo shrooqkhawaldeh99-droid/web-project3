@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الحزم | بير برنت</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <script src="script.js"></script>
+</body>
+<div id="accessibility-menu">
+        <button id="accessibility-btn">Accessibility</button>
+        <div id="accessibility-options">
+            <button id="increase-text">A+</button>
+            <button id="decrease-text">A-</button>
+            <button id="reset-text">Reset</button>
+        </div>
+    </div>
+
+    <script>
+        let currentFontSize = 16; 
+
+        document.getElementById("increase-text").addEventListener("click", () => {
+            currentFontSize += 2;
+            document.body.style.fontSize = currentFontSize + "px";
+        });
+
+        document.getElementById("decrease-text").addEventListener("click", () => {
+            if (currentFontSize > 10) {
+                currentFontSize -= 2;
+                document.body.style.fontSize = currentFontSize + "px";
+            }
+        });
+
+        document.getElementById("reset-text").addEventListener("click", () => {
+            currentFontSize = 16;
+            document.body.style.fontSize = currentFontSize + "px";
+        });
+    </script>
+    <header>
+        <div class="container">
+            <h1>بير برنت</h1>
+            <nav>
+                <ul>
+                    <li><a href="home.html">الرئيسية</a></li>
+                    <li><a href="products.html">المنتجات</a></li>
+                    <li><a href="packages.html">الحزم</a></li>
+                    <li><a href="order.html">اطلب الآن</a></li>
+                    <li><a href="contact.html">تواصل معنا</a></li>
+                    <li><a href="recyling.html">الاستدامه واعاده التدوير</a></li>
+                    <li><a href="markting.html">التسويق</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="packages">
+        <div class="container">
+            <h2>الحزم المخصصة</h2>
+            <div class="package-grid">
+                <div class="package-card">
+                    <h3>حزمة الحفلات</h3>
+							  <h1><img src="p8.png" alt="صوره توظح الطباعه بشكل عام"></h1>
+
+                    <ul>
+                        <li>قوائم </li>
+                        <li> مناديل</li>
+                        <li>ادوات المائده </li>
+                        <li>مفارش المائده </li>
+                    </ul>
+                    <span>100 دينار</span>
+                    <a href="order.html" class="btn">اطلب الآن</a>
+                </div>
+                <div class="package-card">
+                    <h3>حزمة المكتب</h3>
+							  <h1><img src="p9.png" alt="صوره توظح الطباعه بشكل عام"></h1>
+
+                    <ul>
+                        <li>لوحات اعلانيه </li>
+                        <li>دفاتر يوميات </li>
+                        <li> دفاتر ملاحضات </li>
+                    </ul>
+                    <span>120 دينار</span>
+                    <a href="order.html" class="btn">اطلب الآن</a>
+                </div>
+                <div class="package-card">
+                    <h3>حزمة الملابس</h3>
+							  <h1><img src="p2.png" alt="صوره توظح الطباعه بشكل عام"></h1>
+
+                    <ul>
+                        <li> قمصان هودي</li>
+                        <li> بلوزات</li>
+                        <li>ملابس الصلات الرياضيه </li>
+                        <li> قبعات صغيره</li>
+                    </ul>
+                    <span>200 دينار</span>
+                    <a href="order.html" class="btn">اطلب الآن</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 بير برنت. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

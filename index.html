@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بير برنت | الصفحة الرئيسية</title>
+	 
+
+    <link rel="stylesheet" href="style.css">
+</head>
+  <script src="script.js"></script>
+</body>
+<div id="accessibility-menu">
+        <button id="accessibility-btn">Accessibility</button>
+        <div id="accessibility-options">
+            <button id="increase-text">A+</button>
+            <button id="decrease-text">A-</button>
+            <button id="reset-text">Reset</button>
+        </div>
+    </div>
+
+    <script>
+        let currentFontSize = 16; 
+
+        document.getElementById("increase-text").addEventListener("click", () => {
+            currentFontSize += 2;
+            document.body.style.fontSize = currentFontSize + "px";
+        });
+
+        document.getElementById("decrease-text").addEventListener("click", () => {
+            if (currentFontSize > 10) {
+                currentFontSize -= 2;
+                document.body.style.fontSize = currentFontSize + "px";
+            }
+        });
+
+        document.getElementById("reset-text").addEventListener("click", () => {
+            currentFontSize = 16;
+            document.body.style.fontSize = currentFontSize + "px";
+        });
+    </script>
+<body>
+    <header>
+        <div class="container">
+            <h1>بير برنت</h1>
+            <nav>
+                <ul>
+                    <li><a href="home.html">الرئيسية</a></li>
+                    <li><a href="products.html">المنتجات</a></li>
+                    <li><a href="packages.html">الحزم</a></li>
+                    <li><a href="order.html">اطلب الآن</a></li>
+                    <li><a href="contact.html">تواصل معنا</a></li>
+                    <li><a href="recyling.html">الاستدامه واعاده التدوير</a></li>
+                    <li><a href="markting.html">التسويق</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="container">
+				
+		  <h1><img src="p3.png" alt="صوره توظح الطباعه بشكل عام"></h1>
+
+            <h2>مرحبا بك في بير برنت</h2>
+            <p>نقدم أفضل خدمات الطباعة والتصميم باحترافية وجودة عالية.</p>
+            <a href="products.html" class="btn">تصفح المنتجات</a>
+        </div>
+    </section>
+    <section class="about">
+        <div class="container">
+            <h3>من نحن</h3>
+            <p>شركة متخصصة في بيع المنتجات المطبوعة عبر الإنترنت مثل الأكواب، القمصان، الكروت، والحزم المخصصة للشركات والمدارس والمطاعم.</p>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>© 2025 بير برنت. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

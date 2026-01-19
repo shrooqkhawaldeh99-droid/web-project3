@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الشحن إلى الدول العربية</title>
+    <style>
+  <script src="script.js"></script>
+</body>
+<div id="accessibility-menu">
+        <button id="accessibility-btn">Accessibility</button>
+        <div id="accessibility-options">
+            <button id="increase-text">A+</button>
+            <button id="decrease-text">A-</button>
+            <button id="reset-text">Reset</button>
+        </div>
+    </div>
+
+    <script>
+        let currentFontSize = 16; 
+
+        document.getElementById("increase-text").addEventListener("click", () => {
+            currentFontSize += 2;
+            document.body.style.fontSize = currentFontSize + "px";
+        });
+
+        document.getElementById("decrease-text").addEventListener("click", () => {
+            if (currentFontSize > 10) {
+                currentFontSize -= 2;
+                document.body.style.fontSize = currentFontSize + "px";
+            }
+        });
+
+        document.getElementById("reset-text").addEventListener("click", () => {
+            currentFontSize = 16;
+            document.body.style.fontSize = currentFontSize + "px";
+        });
+    </script>
+        body {
+            font-family: 'Tahoma', sans-serif;
+            background-color: #f0f3f5;
+            direction: rtl;
+            margin: 0;
+        }
+        
+        header {
+            background-color: #009688;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        section {
+            padding: 20px;
+        }
+        
+        .box {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: auto;
+        }
+        
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        
+        input,
+        select,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        
+        button {
+            background-color: #009688;
+            color: white;
+            border: none;
+            margin-top: 20px;
+        }
+        
+        #النتيجة {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #00796B;
+        }
+        
+        footer {
+            background-color: #e0e0e0;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>احسب تكلفة الشحن للدول العربية</h1>
+    </header>
+
+    <section>
+        <div class="box">
+            <form onsubmit="احسب_الشحن(); return false;">
+                <label for="الدولة">اختر الدولة:</label>
+                <select id="الدولة" required>
+                    <option value="">-- اختر دولة --</option>
+                    <option value="السعودية">السعودية</option>
+                    <option value="الأردن">الأردن</option>
+                    <option value="مصر">مصر</option>
+                    <option value="الإمارات">الإمارات</option>
+                    <option value="الكويت">الكويت</option>
+                    <option value="قطر">قطر</option>
+                    <option value="تونس">تونس</option>
+                    <option value="الجزائر">الجزائر</option>
+                    <option value="لبنان">لبنان</option>
+                    <option value="العراق">العراق</option>
+                </select>
+
+                <label for="الوزن">وزن الشحنة (كجم):</label>
+                <input type="number" id="الوزن" min="0.1" step="0.1" required>
+
+                <button type="submit">احسب الآن</button>
+
+                <p id="النتيجة"></p>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 خدمة الشحن العربي
+    </footer>
+
+    <script>
+        function احسب_الشحن() {
+            const الدولة = document.getElementById("الدولة").value;
+            const الوزن = parseFloat(document.getElementById("الوزن").value);
+
+            if (!الدولة || isNaN(الوزن)) {
+                document.getElementById("النتيجة").textContent = "يرجى إدخال جميع البيانات المطلوبة.";
+                return;
+            }
+
+            let السعر_لكل_كجم;
+            switch (الدولة) {
+                case "السعودية":
+                    السعر_لكل_كجم = 5;
+                    break;
+                case "الأردن":
+                    السعر_لكل_كجم = 4;
+                    break;
+                case "مصر":
+                    السعر_لكل_كجم = 6;
+                    break;
+                case "الإمارات":
+                    السعر_لكل_كجم = 5.5;
+                    break;
+                case "الكويت":
+                    السعر_لكل_كجم = 6;
+                    break;
+                case "قطر":
+                    السعر_لكل_كجم = 5.5;
+                    break;
+                case "تونس":
+                    السعر_لكل_كجم = 7;
+                    break;
+                case "الجزائر":
+                    السعر_لكل_كجم = 7.5;
+                    break;
+                case "لبنان":
+                    السعر_لكل_كجم = 6.5;
+                    break;
+                case "العراق":
+                    السعر_لكل_كجم = 6;
+                    break;
+                default:
+                    document.getElementById("النتيجة").textContent = "الدولة غير مدعومة.";
+                    return;
+            }
+            const التكلفة = الوزن * السعر_لكل_كجم;
+            document.getElementById("النتيجة").textContent = `كلفة الشحن إلى ${الدولة}: ${التكلفة.toFixed(2)} دولار`;
+        }
+    </script>
+
+</body>
+
+</html>
